@@ -17,6 +17,8 @@ github.com/mitchellh/mapstructure v1.1.2 h1:fmNYVwqnSfB9mZU6OS2O6GsXM+wcskZDuKQz
 github.com/mitchellh/mapstructure v1.1.2/go.mod h1:FVVH3fgwuzCH5S8UJGiWEs2h04kUh9fWfEaFds41c1Y=
 github.com/nautilus/gateway v0.0.13 h1:yqiNkvrPKXnZ+zBZvNVqLM2Rztfa/VKgysms/kfDtXw=
 github.com/nautilus/gateway v0.0.13/go.mod h1:gtcsdptRygni0lw4e3DcyZpZ2bfu5w1AcJMsfrVNLdo=
+github.com/nautilus/gateway/examples/auth v0.0.0-20190813042451-750729497797/go.mod h1:ThxvpsrAAbz9xB3YcVtPHPNLw9UUNCwJXfA6jBRPlx8=
+github.com/nautilus/graphql v0.0.3/go.mod h1:58l1aeXqmU+gAfwagVHqTUv8C6LBfa63mZ6VHj1dbXQ=
 github.com/nautilus/graphql v0.0.6 h1:/OgDKNLmigZ9JqfBiv8UHMxaWntbSzNDBuI+DWa7dlQ=
 github.com/nautilus/graphql v0.0.6/go.mod h1:58l1aeXqmU+gAfwagVHqTUv8C6LBfa63mZ6VHj1dbXQ=
 github.com/opentracing/opentracing-go v1.0.2 h1:3jA2P6O1F9UOrWVpwrIo17pu01KWvNWg4X946/Y5Zwg=
@@ -26,6 +28,7 @@ github.com/sergi/go-diff v1.0.0/go.mod h1:0CfEIISq7TuYL3j771MWULgwwjU+GofnZX9QAm
 github.com/sirupsen/logrus v1.3.0 h1:hI/7Q+DtNZ2kINb6qt/lS+IyXnHQe9e90POfeewL/ME=
 github.com/sirupsen/logrus v1.3.0/go.mod h1:LxeOpSwHxABJmUn/MG1IvRgCAasNZTLOkJPxbbu5VWo=
 github.com/spf13/cobra v0.0.3/go.mod h1:1l0Ry5zgKvJasoi3XT1TypsSe7PqH0Sj9dhYf7v3XqQ=
+github.com/spf13/pflag v1.0.3/go.mod h1:DYY7MBk1bdzusC3SYhjObp+wFpr4gzcvqqNjLnInEg4=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/objx v0.1.1/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=

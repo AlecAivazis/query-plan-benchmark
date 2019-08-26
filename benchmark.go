@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"time"
+	"context"
 
     "github.com/nautilus/gateway"
     "github.com/nautilus/graphql"
@@ -28,7 +30,7 @@ const schema2 = `
 		logo: Image!
 	}
 
-	type Image! {
+	type Image {
 		id: ID!
 	}
 `
@@ -79,11 +81,30 @@ func main() {
 		})
 	}
 
-	// instantiate the gateway we'll time
-	gw, err := gateway.New(remoteServices)
+	// in order to avoid network requests to services that don't really exist
+	// we're going to use an executor that always returns a fixed value. While this
+	// would produce weird results if we were to send it to a user, we don't actually
+	// care about the result of the execution, just how long the planning phase took.
+	executor := &gateway.MockExecutor{
+		map[string]interface{}{
+			"hello": "world",
+		},
+	}
+
+	// instantiate the gateway we'll time with our mock executor
+	gw, err := gateway.New(remoteServices, gateway.WithExecutor(executor))
 	if err != nil {
 		panic(err)
 	}
 
+	// start the timer
+	start := time.Now()
+	// execute the query
+	gw.Execute(&gateway.RequestContext{
+		Context:  context.Background(),
+		Query:    query,
+	})
 
+	// just print how long that took
+	fmt.Println(time.Since(start))
 }
