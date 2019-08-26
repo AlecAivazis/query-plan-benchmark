@@ -28,6 +28,7 @@ const schema2 = `
 	type Market {
 		name: String!
 		logo: Image!
+		owner: User
 	}
 
 	type Image {
@@ -48,10 +49,37 @@ const query = `
 		}
 	}
 
-	fragment UserList on Query {
+	fragment UserList on User {
 		firstName
 		market {
 			...MarketDetails
+			owner {
+				market {
+					owner {
+						market {
+							owner {
+								market {
+									owner {
+										market {
+											owner {
+												market {
+													owner {
+														market {
+															owner {
+																firstName
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -60,7 +88,7 @@ const query = `
 		logo {
 			thumbnailURL
 		}
-	}	
+	}
 `
 
 
@@ -100,10 +128,13 @@ func main() {
 	// start the timer
 	start := time.Now()
 	// execute the query
-	gw.Execute(&gateway.RequestContext{
+	_, err = gw.Execute(&gateway.RequestContext{
 		Context:  context.Background(),
 		Query:    query,
 	})
+	if err != nil {
+		panic(err)
+	}
 
 	// just print how long that took
 	fmt.Println(time.Since(start))
